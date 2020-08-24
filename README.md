@@ -1,168 +1,167 @@
-# Hugo-theme-diaspora
-## Port of WordPress theme diaspora to Hugo. [中文文档](https://github.com/honjun/hugo-theme-diaspora/REAAME-zn.md)
-Thanks to WordPress theme author @Loeify
-
-Preview: [demo](https://diaspora.hojun.cn/)
-![](https://cdn.jsdelivr.net/gh/hojun2/hojun2.github.io/img/diaspora.jpg)
-
-## QQ group
-If you are a user, plus group QQ: 801511924
-
-If you are a creator, plus group QQ: 194472590
-
-##  Download and install
-Cd  < YOUR Bolg Root Dir to your blog root directory > 
-git clone git @ github.com:honjun/hugo-theme-diaspora.git themes/Diaspora
-## use
-Simply cut the contents of the exampleSite under the theme to the root directory to replace the replacement.
-
-### Modify the configuration, just modify the changes.
-```yml
-# [Change] Change your blog URL 
-baseurl = "https://hojun2.github.io" 
-# [Do not change] Language setting Chinese 
-languageCode = "zh-CN" 
-# [Do not change] If Chinese/Japanese/ Korean language. Please set to true in order for .Summary and .WordCount to execute correctly. 
-hasCJKLanguage = true 
-# [Change] Site title 
-title = "素锦" 
-# [Do not change] Theme name 
-theme = "Diaspora" 
-# [Do not change] Theme directory 
-themesDir = "./themes/" 
-# [Do not change] Set the number of entries in the list page, the default 10 
-paginate = 10 
-# [Do not change] Disable the directory to lowercase 
-disablePathToLower = true 
-# [Do not change] Set the automatic summary (summary) characters The number is 50. If the article description is empty, the summary will automatically use the first 50 characters of the article as the summary. 
-summaryLength = 50 
-
-# [Custom] Set the icon of the list page to display the number of words in the default display true/false display / not display
-[params.iconshow] 
-    # display classification 
-    category to true = 
-    # is not displayed series (related) 
-    Series to false = 
-    # display tag 
-    Tag to true = 
-
-# [] does not change the Classification Tag Series category 
-[Taxonomies] 
-  category = "the Categories" 
-  Tag = "Tags" 
-  Series = "series" 
-# [Do not change] Generate link configuration 
-[permalinks] 
-    post = "/:year/:month/:day/:slug" 
-# [Change] How to change the personal parameters, this should be. 
-[params] 
-    # Tell me who you are 
-    author = "hojun" 
-    bio = "Blogger - Programmer - Gopher" 
-    location = "Earth" 
-    site_description = "hojun's hugo static blog"
-    Copyright = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)." 
-    avatar = "css/images/avatar.png" 
-    # Enter your email address To display your Gravatar icon in the profile. If not set the theme 
-    # will fallback to the avatar. 
-    gravatar = "you@example.com" 
-    logo = "css/images/logo.png" 
-    disable_mathjax = false # set to true to disable MathJax 
-
-    # define which types of pages should be shown. By default the type with the most regular pages 
-    mainSections = ["post"] 
-
-    # Format dates Go's time formatting 
-    date_format = "January 2, 2006" 
-
-    #Add custom assets with their paths relative to the static folder 
-  custom_css = [] 
-  custom_js = [] 
-
-# [custom] navigation bar menu configuration 
-[[params.menu]] 
-    name = "About" 
-    link = "/about/" 
-    target = " _blank" 
-[[params.menu]] 
-    name = "Links" 
-    link = "/links/" 
-    target = "" 
-[[params.menu]] 
-    name = "Archives" 
-    link = "/archives/" 
-    target = "" 
-[[ Params.menu]] 
-    name = "Categories" 
-    link = "/categories/" 
-    target = "" 
-[[params.menu]] 
-    name = "Tags" 
-    link = "/tags/" 
-    target = "" 
+The original Hugo Icarus theme has been unmaintained for years, and as Hugo upgraded, some features broke (such as front-page post listing, recent posts, and post counts). This version fixes such issues.
 
 
-[social] 
-# TODO
+# Icarus
+
+Icarus is a responsive and customizable theme for bloggers. It's a port of the same-named theme for [Hexo](file://hexo.io) made by [Ruipeng Zhang](https://github.com/ppoffice). Noteworthy features of this Hugo theme are the integration of a comment-system powered by Disqus, localization (l10n) support, syntax highlighting for source code and optional widgets for the sidebar.
+
+
+## Get the theme
+
+I assume you've Git installed. Inside the folder of your Hugo site run
+
+```shell
+$ cd themes
+$ git clone https://gitlab.com/toryanderson/hugo-icarus.git
 ```
-### about, links page 
-About directly content\about\_index.mdmodify the md content.
 
-Links directly \content\links.mdadded below
-```yml
-- url : https://www.banxia.me 
-  name : Pinellia small stack 
-  desc : Pinellia small stack
-```
-This form of friendship information can be.
+You should see a folder called `hugo-icarus-theme` inside the `themes` directory that we created a few moments ago. For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
-### About the article header
-The default format is \archetypes\default.md and the content is as follows:
 
-```yml
----
- # title does not change the 
-title : " {{.Name the replace " - "" "| title}}" 
-# date does not change 
-DATE : {{}} .date 
-# classification change 
-the Categories : 
- - Life 
-# series (related) Articles Change 
-series : XXX 小记
-# tag change 
-tags : 
- - tag one 
- - tag two 
-# article music default to the next value change 
-mp3 : http://isujin.com/wp-content/uploads/2016/01/ street loneliness.mp3 ? _ = 1 
-# articles cover art for the next value to change the default 
-cover :Https://cdn.jsdelivr.net/gh/hojun2/hojun2.github.io/img/wallhaven-672007-2.jpg 
-#文章Keyword plus 
-keywords :
- #文章介绍加/不加是default article first 50 characters 
-description : 
----
-```
-##  2019.6 Update.  Site search
-Thanks to lurr.js and hugo-lunr . This plugin is modified based on hugo-lunr and only adapts to the hugo-theme-diaspora theme. Other topics need to be modified. Install the plugin first (requires the npm tool to be installed)
-```cmd
-npm i hugo-lunr-diaspora
-```
-Then create a new package.json in the root of the blog, add the following content
-```json
-{
-   " scripts " : {
-     " index " : " hugo-lunr " 
-  } 
-}
-```
-Finally, cd to the blog root directory to run the npm run indexgenerated lurr.json file can use the site search. Note that you need to update the lurr.json file after updating the article.
+## Setup
 
-## Ask the subject author for a cup of coffee
-### Paypal
-[paypal](https://www.paypal.me/hojuncn)
-### Left hand collar red envelope, right hand reward
-![](https://cdn.jsdelivr.net/gh/honjun/cdn@1.8/img/custom/donate/AliPayQRsmall.jpg)
-### WeChat payment
-![](https://cdn.jsdelivr.net/gh/honjun/cdn@1.8/img/custom/donate/WeChanSQsmall.jpg)
+Next, navigate to the `exampleSite` folder at `themes/hugo-type-theme/exampleSite/`. In order to get your site running, you need to copy `config.toml` and all the content of all relevant subfolders such as `data/l10n.toml` into the root folders.
+
+To turn the `exampleSite` folder in a standalone demo site the `themesDir` property has been set to `../..`. This way you can preview this theme by running `hugo server` inside `exampleSite` folder.
+
+****Due to the customized `themesDir` path Hugo will fail to find themes if you copied the `config.toml` into the root directory of a regular Hugo website.**** Make sure you comment out the `themesDir` property if you use the theme in production.
+
+
+## The config file
+
+Now, let us take a look into the `config.toml`. Feel free to play around with the settings.
+
+
+### Comments
+
+The optional comment system is powered by Disqus. Enter your shortname to enable the comment section under your posts.
+
+`disqusShortname = ""`
+
+Tip: you can disable the comment section for a single page in its frontmatter:
+
+```toml
+disable_comments = true
+```
+
+
+### Menu
+
+You can also define the items menu entries as you like. First, let us link a post that you've written. We can do this in the frontmatter of the post's content file by setting `menu` to `main`.
+
+```toml
++++
+menu = "main"
++++
+```
+
+Furthermore, we can add entries that don't link to posts. Back in the `config.toml` you'll find a section for the menus:
+
+```toml
+[[params.menu]]
+    before = true
+    label  = "Home"
+    link   = "/"
+```
+
+Define a label and enter the URL to resource you want to link. With `before` you can decide whether the link should appear before ****or**** after all linked posts in the menu. Therefore, `Home` appears before the linked post.
+
+
+### Sidebars
+
+In order to use the full width of the website you can disable the profile on the left and / or the widgets on the right for a single page in the frontmatter:
+
+```toml
++++
+disable_profile = true
+disable_widgets = true
++++
+```
+
+
+### Tell me who you are
+
+This theme also provides a profile section on the left. Add your social network accounts to the profile section on the left by entering your username under `social`. The links to your account will be create automatically.
+
+
+### Widgets
+
+Beside the profile section you can add widgets on the right sidebar. The following widgets are available:
+
+-   recent articles
+-   category list
+-   tag list
+-   tag cloud
+
+You can deactivate them under `params.widgets`:
+
+```toml
+[params.widgets]
+    recent_articles = false
+    categories = true
+    tags = true
+    tag_cloud = true
+```
+
+
+### Date line
+
+The date line includes: post date, \* of words, approximate reading, time tags and categories. However, if you want certain pages to omit the date line, simply put `nodateline = true` in the front matter for that page.
+
+
+### Disable Previous / next article links
+
+To disable the inclusion of a previous/next article link at the bottom of the page, add `noprevnext = true` to the front matter. This feature, along with `nodateline` can be used to create standalone pages that are less "blog-like"
+
+
+## Localization (l10n)
+
+You don't blog in English and you want to translate the theme into your native locale? No problem. Take a look in the `data` folder and you'll find a file `l10n.toml` that we've copied at the beginning. It contains all strings related to the theme. Just replace the original strings with your own.
+
+
+## Linking thumbnails
+
+After creating a new post you can define a banner by entering the relative path to the image.
+
+banner = "banners/placeholder.png"
+
+This way you can store them either next to the content file or in the `static` folder.
+
+
+## Mathematical equations
+
+Mathematical equations in form of LaTeX or MathML code can be rendered with the support of [MathJax](https://www.mathjax.org). MathML works out of the box. If you're using LaTeX you need to wrap your equation with `$$`.
+
+You can also print formulas inline. In this case wrap the formula only once with `$`.
+
+If you don't need equations, you can disable MathJax but putting `disable_mathjax = true` in your config.toml. This will prevent clients from unnecessarily downloading the MathJax library.
+
+
+### Gallery shortcode
+
+This shortcode you to easily include a gallery into your pages. Copy the code below into your content file and enter the relative paths to your images.
+
+{{< gallery "/banners/placeholder.png" "/banners/placeholder.png" "/banners/placeholder.png" >}}
+
+
+## Nearly finished
+
+In order to see your site in action, run Hugo's built-in local server.
+
+$ hugo server
+
+Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
+
+
+## License
+
+This theme is released under the MIT license. For more information read the [license](https://github.com/digitalcraftsman/hugo-icarus-theme/blob/master/LICENSE.md).
+
+
+## Acknowledgements
+
+Thanks to
+
+-   [digitalcraftsman](https://github.com/digitalcraftsman/hugo-icarus-theme) for the initial Hugo port of the Icarus theme
+-   [Ruipeng Zhang](https://github.com/ppoffice) for creating this theme
+-   [Steve Francia](file://github.com/spf13) for creating Hugo and the awesome community around the project
