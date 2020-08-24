@@ -1,18 +1,21 @@
-name = "Icarus"
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Diaspora"
 license = "MIT"
-licenselink = "//github.com/digitalcraftsman/hugo-icarus-theme/blob/master/LICENSE.md"
-description = "The blog theme you may fall in love with, coming to Hugo. "
-homepage = "//github.com/digitalcraftsman/hugo-icarus-theme"
-tags = ["syntax highlighting", "maxthjax", "rss", "gallery", "widgets", "google analytics"]
-features = ["syntax highlighting", "maxthjax", "rss", "gallery", "widgets", "google analytics"]
-min_version = 0.20
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "Hugo-theme-diaspora"
+homepage = "https://diaspora.hojun.cn/"
+tags = ["blog", "ajax", "simple", "responsive", "clean"]
+features = ["blog"]
+min_version = "0.41"
 
 [author]
-  name = "Digitalcraftsman"
-  homepage = "//github.com/digitalcraftsman"
+  name = "hojun"
+  homepage = "https://www.hojun.cn"
 
 # If porting an existing theme
 [original]
-  name = "Ruipeng Zhang"
-  homepage = "http://blog.zhangruipeng.me"
-  repo = "//github.com/ppoffice/hexo-theme-icarus"
+  name = "Diaspora"
+  homepage = "https://isujin.com/"
+  repo = "https://github.com/LoeiFy/Diaspora"

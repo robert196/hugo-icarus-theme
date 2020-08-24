@@ -1,8 +1,13 @@
-+++
-title = "About"
-date = "2017-05-19T21:49:20+02:00"
-menu = "main"
-disable_comments = true
-+++
-
-Add some information about yourself.
+---
+title: "关于"
+date: 2019-04-20T23:08:32+08:00
+categories: 
+series:
+tags: 
+mp3: 
+cover: 
+keywords:
+description: 
+---
+## 关于我
+巴巴吧吧

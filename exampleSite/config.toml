@@ -1,28 +1,35 @@
-baseurl = "https://example.org/"
-languageCode = "en-us"
-title = "Icarus"
-# Enable comments by entering your Disqus shortname
-disqusShortname = "spf13"
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
-# Define the number of posts per page
-paginate = 10
-footnotereturnlinkcontents = "↩"
-theme = "hugo-icarus-theme"
-# Comment the themesDir option if you use this theme in production
+baseurl = "https://example.com"
+languageCode = "zh-CN"
+hasCJKLanguage = true
+title = "My hugoBlog"
+theme = "hugo-theme-diaspora-master"
 themesDir = "../.."
 
+# Define the number of posts per page
+paginate = 10
+
+disablePathToLower = true
+summaryLength = 50
+
+[params.iconshow]
+    category = true
+    series = false
+    tag = true
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
 
-
 [params]
     # Tell me who you are
-    author = "John Doe"
+    author = "hojun"
     bio = "Blogger - Programmer - Gopher"
     location = "Earth"
-    site_description = ""
+    site_description = "hojun的hugo静态博客"
     copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
     avatar = "css/images/avatar.png"
     # Enter your email address to display your Gravatar icon in the profile. If not set the theme
@@ -32,14 +39,14 @@ themesDir = "../.."
     disable_mathjax = false # set to true to disable MathJax
 
     # define which types of pages should be shown. By default the type with the most regular pages
-    mainSections = ["post"]
+    mainSections = ["posts"]
 
     # Format dates with Go's time formatting
-    date_format = "2006-01-02"
+    date_format = "January 2, 2006"
 
     # Add custom assets with their paths relative to the static folder
-	custom_css = []
-	custom_js  = []
+  custom_css = []
+  custom_js  = []
 
 # Create custom menu entries by defining a label and a link for
 # them. Since you can also link posts, you've the option the
@@ -48,61 +55,25 @@ themesDir = "../.."
 # E.g.: "Home" appears before all linked posts in the menu
 # and "Tags" / "Categories" after them.
 [[params.menu]]
-    before = true
-    label  = "Home"
-    link   = "/"
-
+    name   = "About"
+    link   = "/about/"
+    target = "_blank"
 [[params.menu]]
-    before = false
-    label  = "Tags"
-    link   = "tags/"
-
+    name   = "Links"
+    link   = "/links/"
+    target = ""
 [[params.menu]]
-    before = false
-    label  = "Categories"
-    link   = "categories/"
-
-# Enter a link for the follow button on the left
-[params.profile]
-    follow_button = "https://github.com/digitalcraftsman"
-
+    name   = "Archives"
+    link   = "/archives/"
+    target = ""
+[[params.menu]]
+    name   = "Categories"
+    link   = "/categories/"
+    target = ""
+[[params.menu]]
+    name   = "Tags"
+    link   = "/tags/"
+    target = ""
 
 [social]
-# Add your social network accounts to the profile section on the left
-# by entering your username. The links to your account will be
-# created automatically.
-    github          = "digitalcraftsman"
-    gitlab          = ""
-    bitbucket       = ""
-    jsfiddle        = ""
-    codepen         = ""
-    foursquare      = ""
-    dribbble        = ""
-    deviantart      = ""
-    behance         = ""
-    flickr          = ""
-    instagram       = ""
-    youtube         = ""
-    vimeo           = ""
-    vine            = ""
-    medium          = ""
-    wordpress       = ""
-    tumblr          = ""
-    xing            = ""
-    linkedin        = ""
-    slideshare      = ""
-    stackoverflow   = ""
-    reddit          = ""
-    pinterest       = ""
-    googleplus      = ""
-    facebook        = ""
-    facebook_admin  = ""
-    twitter_domain  = ""
-    twitter         = "spf13"
-
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-    recent_articles = true
-    categories = true
-    tags = true
-    tag_cloud = true
+# TODO

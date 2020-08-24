@@ -1,23 +1,12 @@
-{{ partial "head" . }}
-
-<div id="container">
-	{{ partialCached "header" . }}
-   	
-   	<div class="outer">
-   	{{ if not .Params.disable_profile }}
-    	{{ partialCached "profile" . }}
-    {{ end }}
-
-    <section id="main">
-    {{ block "main" . }}{{ end }}
-    </section>
-
-   	{{ if not .Params.disable_widgets }}
-    	{{ partial "sidebar" . }}
-    {{ end }}
-	</div>
-</div>
-
-{{ partialCached "footer" . }}
-</body>
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+        {{- block "main" . }}{{- end }}
+        {{- partial "footer.html" . -}}
+    </body>
 </html>
+
